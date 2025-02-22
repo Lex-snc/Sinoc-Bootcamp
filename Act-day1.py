@@ -1,3 +1,4 @@
+from datetime import datetime
 
 score = float(input("Enter your grade (0-100): "))
 
@@ -14,4 +15,4 @@ else:
     grade = "F"
 
 
-print(f"Your letter grade is: {grade}")
+print(f"Your letter grade is: {grade} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
