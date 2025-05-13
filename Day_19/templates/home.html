@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Home</h1>
+
+    <h2>LOGIN</h2>
+    <!-- Flash messages (for success or error) -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <form action="/login" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="password" name="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <h2>REGISTER</h2>
+    <!-- Flash messages (for success or error) -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Registration Form -->
+    <form action="/register" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="password" name="password" placeholder="Enter your password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm your password" required>
+        <button type="submit">Register</button>
+    </form>
+
+    <h2>ADD INFO</h2>
+    <!-- Flash messages (for success or error) -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Registration Form -->
+    <form action="/add-info" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required><br><br>
+
+        <input type="text" name="fname" placeholder="First Name" required><br><br>
+        <input type="text" name="lname" placeholder="Last Name" required><br><br>
+        <input type="number" name="age" placeholder="Age" required><br><br>
+        <input type="text" name="address" placeholder="Address" required><br><br>
+        <input type="date" name="bday" placeholder="Birthday" required><br><br>
+
+        <button type="submit">Add Info</button>
+    </form>
+
+</body>
+
+</html>
